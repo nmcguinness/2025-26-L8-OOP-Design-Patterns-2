@@ -1,9 +1,7 @@
-package org.example.observer;
+package org.example.observer.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
 
 public class EventDispatcher {
 
