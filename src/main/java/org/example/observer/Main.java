@@ -6,7 +6,6 @@ public class Main {
     public static void main(String[] args) {
             Main theApp = new Main();
             theApp.run();
-            
         }
 
         public void run()
