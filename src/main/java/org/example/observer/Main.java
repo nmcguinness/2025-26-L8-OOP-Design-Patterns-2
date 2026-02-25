@@ -1,0 +1,35 @@
+package org.example.observer;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+            Main theApp = new Main();
+            theApp.run();
+        }
+
+        public void run()
+        {
+            //event handling
+            EventDispatcher eventDispatcher = new EventDispatcher();
+
+            //at game start, instanciate all systems
+            ISystem audio = new AudioSystem();  eventDispatcher.register(audio);
+            ISystem ui = new UISystem();        eventDispatcher.register(ui);
+
+            //instantiate player
+            Player p = new Player("Max");
+
+            //collide with ammo, key
+            AmmoItem plasmaRifleAmmo = new AmmoItem();
+            KeyItem dungeonKey = new KeyItem();
+
+            //apply mods to player
+            dungeonKey.modify(p);
+            eventDispatcher.handleEvent("picked up key");
+            plasmaRifleAmmo.modify(p);
+            eventDispatcher.handleEvent("collected plasma rifle ammo");
+
+
+        }
+}
