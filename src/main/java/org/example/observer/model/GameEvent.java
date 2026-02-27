@@ -1,8 +1,6 @@
 package org.example.observer.model;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 enum EventType { Win, Lose, Spawn, Pickup,
     InventoryAdd, InventoryRemove, InventoryMove,
