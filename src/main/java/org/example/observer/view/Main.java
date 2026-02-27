@@ -38,6 +38,7 @@ public class Main {
             dungeonKey.modify(p);
             eventDispatcher.handleEvent(new CollectibleEvent(
                     EventType.Pickup, dungeonKey));
+
             plasmaRifleAmmo.modify(p);
             eventDispatcher.handleEvent(new CollectibleEvent(
                     EventType.Use, plasmaRifleAmmo));
