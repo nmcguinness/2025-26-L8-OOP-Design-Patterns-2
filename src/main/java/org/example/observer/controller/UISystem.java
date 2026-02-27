@@ -3,6 +3,10 @@ import org.example.observer.model.CollectibleEvent;
 import org.example.observer.model.GameEvent;
 
 public class UISystem implements ISystem{
+
+    public UISystem() {
+        EventDispatcher.getInstance().register(this);
+    }
     @Override
     public void handleEvent(GameEvent evt) {
 

@@ -16,32 +16,22 @@ public class Main {
 
         public void run()
         {
-            //event handling
-            EventDispatcher eventDispatcher = new EventDispatcher();
-
             //at game start, instanciate all systems
-            ISystem audio = new AudioSystem();  eventDispatcher.register(audio);
-            ISystem ui = new UISystem();        eventDispatcher.register(ui);
+            ISystem audio = new AudioSystem();
+            ISystem ui = new UISystem();
 
             //instantiate player
             Player p = new Player("Max");
 
             //collide with ammo, key
-            AmmoItem plasmaRifleAmmo = new AmmoItem(CollectibleType.Ammo,
-                    "plasma rifle ammo", 25 );
-            KeyItem dungeonKey = new KeyItem(CollectibleType.Key,
-                    "dungeon key", 101);
+            AmmoItem plasmaRifleAmmo = new AmmoItem(CollectibleType.Ammo, "plasma rifle ammo", 25 );
+            KeyItem dungeonKey = new KeyItem(CollectibleType.Key, "dungeon key", 101);
 
             //some time later...
 
             //apply mods to player
             dungeonKey.modify(p);
-            eventDispatcher.handleEvent(new CollectibleEvent(
-                    EventType.Pickup, dungeonKey));
-
             plasmaRifleAmmo.modify(p);
-            eventDispatcher.handleEvent(new CollectibleEvent(
-                    EventType.Use, plasmaRifleAmmo));
 
             //show player state
             System.out.println(p);

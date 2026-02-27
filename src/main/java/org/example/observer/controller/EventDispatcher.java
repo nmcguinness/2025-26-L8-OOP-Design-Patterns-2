@@ -27,8 +27,6 @@ public class EventDispatcher {
         return instance;
     }
 
-
-
     public void register(ISystem system){
         eventHandlers.add(system);
     }

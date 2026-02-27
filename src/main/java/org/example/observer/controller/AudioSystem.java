@@ -4,6 +4,11 @@ import org.example.observer.model.CollectibleEvent;
 import org.example.observer.model.GameEvent;
 
 public class AudioSystem implements ISystem{
+
+    public AudioSystem() {
+        EventDispatcher.getInstance().register(this);
+    }
+
     @Override
     public void handleEvent(GameEvent evt) {
         CollectibleEvent collEvt = (CollectibleEvent) evt;
