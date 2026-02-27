@@ -1,5 +1,6 @@
 package org.example.observer.controller;
+import org.example.observer.model.GameEvent;
 
 public interface ISystem {
-    void handleEvent(String msg);
+    void handleEvent(GameEvent evt);
 }

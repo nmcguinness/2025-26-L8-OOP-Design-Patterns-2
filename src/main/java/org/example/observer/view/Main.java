@@ -1,9 +1,6 @@
 package org.example.observer.view;
 
-import org.example.observer.model.AmmoItem;
-import org.example.observer.model.CollectibleType;
-import org.example.observer.model.KeyItem;
-import org.example.observer.model.Player;
+import org.example.observer.model.*;
 import org.example.observer.controller.EventDispatcher;
 import org.example.observer.controller.AudioSystem;
 import org.example.observer.controller.ISystem;
@@ -39,9 +36,11 @@ public class Main {
 
             //apply mods to player
             dungeonKey.modify(p);
-            eventDispatcher.handleEvent("picked up key");
+            eventDispatcher.handleEvent(new CollectibleEvent(
+                    EventType.Pickup, dungeonKey));
             plasmaRifleAmmo.modify(p);
-            eventDispatcher.handleEvent("collected plasma rifle ammo");
+            eventDispatcher.handleEvent(new CollectibleEvent(
+                    EventType.Use, plasmaRifleAmmo));
 
             //show player state
             System.out.println(p);

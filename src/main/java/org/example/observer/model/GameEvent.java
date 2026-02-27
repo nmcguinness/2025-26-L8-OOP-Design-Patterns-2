@@ -2,9 +2,7 @@ package org.example.observer.model;
 
 import java.time.Instant;
 
-enum EventType { Win, Lose, Spawn, Pickup,
-    InventoryAdd, InventoryRemove, InventoryMove,
-    Equip, Use, Throw, Drop, Consume};
+;
 
 public class GameEvent {
     private EventType eventType;

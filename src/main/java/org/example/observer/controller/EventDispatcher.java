@@ -1,5 +1,7 @@
 package org.example.observer.controller;
 
+import org.example.observer.model.GameEvent;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +14,9 @@ public class EventDispatcher {
     public void deregister(ISystem system){
         eventHandlers.remove(system);
     }
-    public void handleEvent(String msg){
+    public void handleEvent(GameEvent evt){
         for(ISystem system : eventHandlers){
-            system.handleEvent(msg);
+            system.handleEvent(evt);
         }
     }
 }
