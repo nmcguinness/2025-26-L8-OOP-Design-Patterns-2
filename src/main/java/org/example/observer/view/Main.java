@@ -1,4 +1,4 @@
-package org.example.observer;
+package org.example.observer.view;
 
 import org.example.observer.model.AmmoItem;
 import org.example.observer.model.CollectibleType;
@@ -30,8 +30,12 @@ public class Main {
             Player p = new Player("Max");
 
             //collide with ammo, key
-            AmmoItem plasmaRifleAmmo = new AmmoItem(CollectibleType.Ammo, "plasma rifle ammo", 25 );
-            KeyItem dungeonKey = new KeyItem(CollectibleType.Key, "dungeon key", 101);
+            AmmoItem plasmaRifleAmmo = new AmmoItem(CollectibleType.Ammo,
+                    "plasma rifle ammo", 25 );
+            KeyItem dungeonKey = new KeyItem(CollectibleType.Key,
+                    "dungeon key", 101);
+
+            //some time later...
 
             //apply mods to player
             dungeonKey.modify(p);

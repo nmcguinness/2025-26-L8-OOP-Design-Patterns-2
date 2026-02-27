@@ -10,6 +10,7 @@ public class AmmoItem extends CollectibleItem implements IModifyPlayer {
 
     @Override
     public void modify(Player p) {
+        //notify the event system (audio, collectible, ui, narrative)
         p.setAmmo(p.getAmmo() + size);
     }
 }
